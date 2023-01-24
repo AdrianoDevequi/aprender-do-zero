@@ -1,0 +1,205 @@
+/* base */
+
+    /* reset */
+
+        *{margin:0;padding:0}*,:before,:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,button,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video,a{border:0;outline:0;background:transparent}html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,caption,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video,a{vertical-align:baseline}div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,sub,sup,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,button,table,caption,canvas,summary,time,mark,audio,video,article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:inline-block}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}ins,mark{background-color:#ff9;color:#000}a,ins{text-decoration:none}mark{font-style:italic;font-weight:700}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}img,input,select{vertical-align:middle}a,input,select,textarea{font-weight:700}a img,fieldset,input,select,textarea,input[type=radio],input[type=checkbox]{border:none!important;border:0!important}address{font-style:normal}ul{list-style:none}input,select,textarea,input[type=radio],input[type=checkbox]{background-color:transparent!important;-moz-box-shadow:none;box-shadow:none}a,input,select,textarea,input:focus,textarea:focus,input[type=radio]:focus,input[type=checkbox]:focus{outline:none!important;outline:0!important}hr,input[type="search"]::-webkit-search-decoration,input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-results-button,input[type="search"]::-webkit-search-results-decoration{display:none}img,embed,object,video,iframe{max-width:100%;height:auto}html,body{height:100%}#xSite{min-height:100%;position:relative;width:100%}
+
+    /* efeitos */
+
+        a,a:hover, .bt, .bt:hover, .campoInput, .campoInput:hover
+        {-webkit-transition:.5s;-moz-transition:.5s;transition:.5s}
+
+        .efSomeTudo,.efSomeTxt{text-indent:-999em}
+        .efSomeFluxo,.efSomeTudo{position:absolute;left:-10000em}
+
+
+/* estrutura ========================================================================================= */
+
+@font-face {
+    font-family: 'prosto_oneregular';
+    src: url('prostoone-regular-webfont.woff2') format('woff2'),
+         url('prostoone-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('OpenSans-Regular-webfont.eot');
+    src: url('OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans-Regular-webfont.woff2') format('woff2'),
+         url('OpenSans-Regular-webfont.woff') format('woff'),
+         url('OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+    body{ background-color: #515151; font-family: 'open_sansregular'}
+
+    .xCentraSite{margin:0 auto;display:block} /* background-color: gold */
+        @media only screen and (max-width:479px){.xCentraSite{width:80%}}
+        @media only screen and (min-width:480px) and (max-width:899px){.xCentraSite{width:90%}}
+        @media only screen and (min-width:900px) and (max-width:1299px){.xCentraSite{width:98%}}
+        @media only screen and (min-width:1300px){.xCentraSite{width:1300px}}
+
+    /* TOPO */
+
+        #xTopo{ width: 100%; background-color: rgba(255,255,255,0.2); padding: 1em 0} /* background-color: #fff */
+        /* #767676 */
+
+        /* área fixa */
+            
+            #xTopoAreaFixa{ width: 250px; /*background-color: chartreuse*/} /* verde - width: 196px */
+
+            /* área móvel recolhida 1 */
+
+                #xBtAtivaAreaMovel{ background-color: coral} /* laranja */
+                #xBtAtivaAreaMovel, .xBtMenuArea{ width: 60px; height: 60px}
+                
+                /* traços do menu */
+
+                    .xBtMenu,
+                    .xBtMenu::before,
+                    .xBtMenu::after {
+                      display: block;
+                      background-color: #fff;
+                      position: absolute;
+                      height: 4px;
+                      width: 30px;
+                      transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+                      border-radius: 2px;
+                    }
+
+                    .xBtMenu{ margin-top: 28px; margin-left: 15px}
+                    .xBtMenu::before{ content: ''; margin-top: -8px} /* margin-top: -8px */
+                    .xBtMenu::after{ content: ''; margin-top: 8px} /* margin-top: 8px */
+
+                /* animação dos traços do menu */
+
+                    #xAcionaBtMenu1:checked + .xBtMenuArea .xBtMenu::before{
+                      margin-top: 0px;
+                      transform: rotate(405deg);
+                    }
+
+                    #xAcionaBtMenu1:checked + .xBtMenuArea .xBtMenu{
+                      background: rgba(255, 255, 255, 0);
+                    }
+
+                    #xAcionaBtMenu1:checked + .xBtMenuArea .xBtMenu::after {
+                      margin-top: 0px;
+                      transform: rotate(-405deg);
+                    }
+
+
+
+.xBtMenuArea{ cursor:pointer}
+#xAcionaBtMenu1{display: none}
+
+
+
+
+
+            /* área do logotipo */
+
+                #xAreaLogo{ margin-left: 10px; margin-top: -3px!important}
+                #xAreaLogo.svg{ }
+
+
+        /* área móvel */
+
+            #xTopoAreaMovel{ float: right; text-align: right; width: auto; background-color:orange} /* laranja */
+            
+            /* menu expandido */
+
+                #xMenu li a{ color: #113651}
+                #xMenu li{ margin-left: 1em}
+
+
+@media (max-width: 988px) {
+  .xBtMenuArea {
+   /* display: flex; */
+  }
+  #xMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 196px;
+      height: 100%;
+      background-color: darkgoldenrod
+  }
+  #xAcionaBtMenu1 ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #xAcionaBtMenu1:checked ~ .menu li {
+    border: 1px solid #333;
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #xMenu > li {
+    /*display: flex;
+    justify-content: center;*/
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: #222;
+  }
+  #xMenu > li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+}
+
+    /* CONTEUDO */
+
+        section, .xLinha, .xLinha p, .xCabTitulo{ width: 100%}
+        section, .xLinha, .xCabTitulo{ float: left}
+        .xLinha p{ margin-bottom: 1em}
+
+        .xLinha{ padding: 3em 0}
+        .xLinha:nth-child(even) {background-color: #fff}
+        .xLinha:nth-child(odd) {background-color: #ccc}
+
+        .xColTxt-50Dir, .xColTxt-50Esq{ width: 25%}
+        .xColTxt-50Esq{ float:left; margin-left: 20em}
+        .xColTxt-50Dir{ float:right; margin-right: 7em}
+
+        .xColTxt-50Esq .xTitulo, .xColTxt-50Esq .xTxtDestaque{ text-align: right}
+        .xColTxt-50Dir .xTitulo, .xColTxt-50Dir .xTxtDestaque{ text-align: left}
+
+
+        /* textos */
+
+            .xTitulo, .xTitulo2, .xTitulo3, .xTxt{ width: 100%}            
+            .xTitulo, .xTitulo2, .xTitulo3{ font-size: 1.6em; font-family: 'prosto_oneregular'; line-height: 1.2em}
+            .xTitulo{ margin-bottom: 1em}
+            .xTitulo2, .xTitulo3, .xCabTitulo .xTxt{ margin: 1em 0; text-align: center}
+            .xTitulo2{ color: #fff}
+
+            .xTxt
+            { -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto; line-height: 1.5em; font-size: 1em; text-align: justify}
+
+            .xTxtDestaque{ background-color: #FFFF00; font-size: 1.2em; padding: 0 0.2em; display: inline; line-height: 1.3em}
+
+            .xTxtMaiusculo{ text-transform: uppercase}
+
+        /* listas */
+
+            .xLista, .xLista li{ width: 100%; float: left}
+            .xLista{ margin: 1em 0}          
+            .xLista li{ margin-bottom: 1em}
+
+        /* formulario */
+
+            #matricula{ text-align: center}
+            .xForm{ text-align: center; width: 40%; margin: 0 auto 3em auto}
+            .xCampoTxt{ width: 50%; border: 1px solid #fff!important; padding: 1em}
+            .xCampo{ width: 100%; margin-bottom: 1em}
+.xBt{ cursor: pointer; border: 1px solid #fff!important; padding: 1em}
+
+    /* RODAPE */
