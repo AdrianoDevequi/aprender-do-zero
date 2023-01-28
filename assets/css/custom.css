@@ -47,6 +47,14 @@ p{
     padding-bottom: 200px;
     background-image: url(../imgs/pattern-topo.svg);
 }
+@media (max-width: 600px)
+{
+    .banner-home{
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}
+
 .destaque {
     background-color: var(--amarelo);
     padding: 0 0.2em;
@@ -86,4 +94,26 @@ p{
 .banner-footer{
     background-image: url(../imgs/pattern-footer.svg);
     background-repeat: no-repeat;
+}
+.col-carrega-modal{
+    cursor: pointer;
+}
+.col-sobre-as-aulas {
+    border: 2px solid;
+    border-radius: 10px;
+    min-height: 450px;
+}
+.col-destaque{
+    margin-top: -10px;
+}
+/* Set the border color to the desired color */
+.custom-toggler.navbar-toggler {
+    border-color: rgb(255, 255, 255);
+}
+
+  /* Setting the stroke to green using rgb values (0, 128, 0) */
+          
+  .custom-toggler .navbar-toggler-icon {
+    background-image: url(
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
