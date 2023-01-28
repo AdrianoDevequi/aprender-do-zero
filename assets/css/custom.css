@@ -16,7 +16,74 @@
     font-weight: normal;
     font-style: normal;
 }
-
+:root{
+    --amarelo: #FFFF00;
+    --cinza: #ecf0f1;
+    --branco: #fff;
+    --preto:#000;
+}
 body{
     font-family: 'Open Sans', sans-serif;
+}
+.nav-link{
+    color: var(--bs-light)!important;
+}
+.nav-link:hover{
+    color: var(--amarelo)!important;
+}
+.navbar-nav, h1, h2, h3, h4, h5, h6{
+    font-family: 'prosto_oneregular';
+}
+p{
+    hyphens: auto;
+    line-height: 1.5em;
+    font-size: 1.2em;
+}
+.text-justify{
+    text-align: justify;
+}
+.banner-home{
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-image: url(../imgs/pattern-topo.svg);
+}
+.destaque {
+    background-color: var(--amarelo);
+    padding: 0 0.2em;
+    display: inline;
+    line-height: 1.3em;
+}
+.bg-cinza{
+    background-color: var(--cinza)!important;
+}
+.desc-projeto.pb-2 {
+    font-size: 0.9rem;
+    font-style: italic;
+}
+.box-depoimento{
+    min-height: 537px;
+}
+.accordion {
+    --bs-accordion-bg: transparent!important;
+    --bs-accordion-color: var(--branco)!important;
+    --bs-accordion-btn-focus-border-color: var(--amarelo)!important;
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem #ffff0052!important;
+}
+.accordion-button{
+    color: var(--branco)!important;
+}
+.accordion-button:not(.collapsed){
+    background-color: var(--amarelo)!important;
+    color: var(--preto)!important;
+}
+.accordion-button:focus {
+    border-color: var(--amarelo)!important;
+}
+.banner-sobre-treinamento{
+    background-image: url(../imgs/pattern-dir.svg);
+    background-repeat: no-repeat;
+}
+.banner-footer{
+    background-image: url(../imgs/pattern-footer.svg);
+    background-repeat: no-repeat;
 }
